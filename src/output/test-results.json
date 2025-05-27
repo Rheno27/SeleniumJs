@@ -1,0 +1,12 @@
+{
+  "label": "Pilih Destinasi",
+  "transitions": [
+    {
+      "status": 200,
+      "success": true,
+      "message": "Test berhasil",
+      "responseTime": "6333ms"
+    }
+  ],
+  "reward": 0
+}
