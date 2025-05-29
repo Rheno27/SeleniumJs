@@ -29,7 +29,7 @@ When(
 );
 
 Then(
-  "user redirect ke halaman pilih penerbagnan {string}",
+  "user redirect ke halaman pilih penerbangan {string}",
   async function (expectedUrl) {
     await driver.wait(async () => {
       const currentUrl = await driver.getCurrentUrl();
