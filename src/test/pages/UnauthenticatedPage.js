@@ -36,6 +36,13 @@ class HomePage {
   async cekElemenTampil(xpath) {
     await this.driver.wait(until.elementLocated(By.xpath(xpath)), 10000);
   }
+
+  async isiInputByXpath(xpath, value) {
+    await this.driver.wait(until.elementLocated(By.xpath(xpath)), 10000);
+    const input = await this.driver.findElement(By.xpath(xpath));
+    await input.clear();
+    await input.sendKeys(value);
+  }
 }
 
 module.exports = HomePage;

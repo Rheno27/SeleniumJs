@@ -3,33 +3,39 @@ const path = require("path");
 
 class JsonOutput {
   constructor() {
-    this.testResults = {
-      label: "",
+    this.scenarios = [];
+    this.currentScenario = null;
+  }
+
+  startScenario(label) {
+    this.currentScenario = {
+      label: label,
       transitions: [],
       reward: 0,
     };
-  }
-
-  setLabel(label) {
-    this.testResults.label = label;
+    this.scenarios.push(this.currentScenario);
   }
 
   addTransition(status, success, message, responseTime) {
-    this.testResults.transitions.push({
-      status,
-      success,
-      message,
-      responseTime: `${responseTime}ms`,
-    });
+    if (this.currentScenario) {
+      this.currentScenario.transitions.push({
+        status,
+        success,
+        message,
+        responseTime: `${responseTime}ms`,
+      });
+    }
   }
 
   setReward(reward) {
-    this.testResults.reward = reward;
+    if (this.currentScenario) {
+      this.currentScenario.reward = reward;
+    }
   }
 
-  saveToFile(filename = "test-results.json") {
-    const outputPath = path.join(__dirname, "../../output", filename);
-    fs.writeFileSync(outputPath, JSON.stringify(this.testResults, null, 2));
+  saveToFile(filename) {
+    const outputPath = path.join(__dirname, "../output", filename);
+    fs.writeFileSync(outputPath, JSON.stringify(this.scenarios, null, 2));
   }
 }
 
