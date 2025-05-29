@@ -1,0 +1,98 @@
+[
+  {
+    "label": "SCENARIO 1: Halaman Utama",
+    "transitions": [
+      {
+        "status": "Given",
+        "success": true,
+        "message": "Membuka halaman utama berhasil",
+        "responseTime": "1474ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Klik pilihan destinasi favorit berhasil",
+        "responseTime": "1064ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Klik Cari Penerbangan berhasil",
+        "responseTime": "126ms"
+      }
+    ],
+    "reward": 0
+  },
+  {
+    "label": "SCENARIO 1: Halaman Utama",
+    "transitions": [
+      {
+        "status": "Given",
+        "success": true,
+        "message": "Membuka halaman utama berhasil",
+        "responseTime": "1330ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Mengisi email berhasil",
+        "responseTime": "608ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Mengisi password berhasil",
+        "responseTime": "186ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "70ms"
+      },
+      {
+        "status": "Then",
+        "success": true,
+        "message": "Redirect ke halaman utama berhasil",
+        "responseTime": "305ms"
+      }
+    ],
+    "reward": 1
+  },
+  {
+    "label": "SCENARIO 1: Halaman Utama",
+    "transitions": [
+      {
+        "status": "Then",
+        "success": false,
+        "message": "Gagal redirect ke halaman penerbangan: This driver instance does not have a valid session ID (did you call WebDriver.quit()?) and may no longer be used.",
+        "responseTime": "7632ms"
+      },
+      {
+        "status": "Given",
+        "success": true,
+        "message": "Membuka halaman utama berhasil",
+        "responseTime": "1533ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Klik pilihan destinasi favorit berhasil",
+        "responseTime": "575ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Klik Cari Penerbangan berhasil",
+        "responseTime": "93ms"
+      },
+      {
+        "status": "Then",
+        "success": false,
+        "message": "Gagal redirect ke halaman penerbangan: Wait timed out after 10191ms",
+        "responseTime": "10192ms"
+      }
+    ],
+    "reward": 0
+  }
+]
