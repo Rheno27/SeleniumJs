@@ -1,49 +1,42 @@
 const fs = require("fs");
 const path = require("path");
 
-class JsonOutput {
-  constructor() {
-    this.scenarios = [];
-    this.currentScenario = null;
-  }
+const results = [];
+let currentScenario = null;
 
-  startScenario(label) {
-    this.currentScenario = {
-      label: label,
-      transitions: [],
-      reward: 0,
-    };
-    this.scenarios.push(this.currentScenario);
-  }
+function startScenario(label) {
+  console.log("Mulai Scenario:", label); // Debug
+  currentScenario = {
+    label,
+    transitions: [],
+    reward: 0,
+  };
+}
 
-  addTransition(status, success, message, responseTime) {
-    if (this.currentScenario) {
-      this.currentScenario.transitions.push({
-        status,
-        success,
-        message,
-        responseTime: `${responseTime}ms`,
-      });
-    }
-  }
-
-  setReward(reward) {
-    if (this.currentScenario) {
-      this.currentScenario.reward = reward;
-    }
-  }
-
-  saveToFile(filename) {
-    const outputPath = path.join(__dirname, "../../output", filename);
-    const outputDir = path.dirname(outputPath);
-
-    // Buat direktori jika belum ada
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir, { recursive: true });
-    }
-
-    fs.writeFileSync(outputPath, JSON.stringify(this.scenarios, null, 2));
+function addTransition({ status, success, message, responseTime }) {
+  if (!currentScenario) return;
+  currentScenario.transitions.push({ status, success, message, responseTime });
+  if (!success) {
+    currentScenario.reward = 1;
   }
 }
 
-module.exports = new JsonOutput();
+function endScenario() {
+  if (currentScenario) {
+    results.push(currentScenario);
+    currentScenario = null;
+  }
+}
+
+function saveResults() {
+  const outputPath = path.join(__dirname, "../../output/test-results.json");
+  console.log("Saving result:", results); // Debug
+  fs.writeFileSync(outputPath, JSON.stringify(results, null, 2), "utf-8");
+}
+
+module.exports = {
+  startScenario,
+  addTransition,
+  endScenario,
+  saveResults,
+};
