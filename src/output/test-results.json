@@ -1,98 +1,102 @@
 [
   {
-    "label": "SCENARIO 1: Halaman Utama",
+    "label": "SCENARIO: User belum login memilih salahsatu destinasi tujuan",
     "transitions": [
       {
         "status": "Given",
         "success": true,
         "message": "Membuka halaman utama berhasil",
-        "responseTime": "1474ms"
+        "responseTime": "1254ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik pilihan destinasi favorit berhasil",
-        "responseTime": "1064ms"
+        "responseTime": "773ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik Cari Penerbangan berhasil",
-        "responseTime": "126ms"
+        "responseTime": "117ms"
       }
     ],
     "reward": 0
   },
   {
-    "label": "SCENARIO 1: Halaman Utama",
+    "label": "SCENARIO: User belum login memilih penerbangan",
+    "transitions": [],
+    "reward": 0
+  },
+  {
+    "label": "SCENARIO: User melakukan login",
     "transitions": [
       {
         "status": "Given",
         "success": true,
         "message": "Membuka halaman utama berhasil",
-        "responseTime": "1330ms"
+        "responseTime": "1282ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Mengisi email berhasil",
-        "responseTime": "608ms"
+        "responseTime": "592ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Mengisi password berhasil",
-        "responseTime": "186ms"
+        "responseTime": "256ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik tombol masuk berhasil",
-        "responseTime": "70ms"
+        "responseTime": "58ms"
       },
       {
         "status": "Then",
         "success": true,
         "message": "Redirect ke halaman utama berhasil",
-        "responseTime": "305ms"
+        "responseTime": "279ms"
       }
     ],
-    "reward": 1
+    "reward": 0
   },
   {
-    "label": "SCENARIO 1: Halaman Utama",
+    "label": "SCENARIO: User setelah login memilih salahsatu destinasi tujuan",
     "transitions": [
       {
         "status": "Then",
         "success": false,
-        "message": "Gagal redirect ke halaman penerbangan: This driver instance does not have a valid session ID (did you call WebDriver.quit()?) and may no longer be used.",
-        "responseTime": "7632ms"
+        "message": "Redirect gagal: This driver instance does not have a valid session ID (did you call WebDriver.quit()?) and may no longer be used.",
+        "responseTime": "7602ms"
       },
       {
         "status": "Given",
         "success": true,
         "message": "Membuka halaman utama berhasil",
-        "responseTime": "1533ms"
+        "responseTime": "1290ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik pilihan destinasi favorit berhasil",
-        "responseTime": "575ms"
+        "responseTime": "536ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik Cari Penerbangan berhasil",
-        "responseTime": "93ms"
-      },
-      {
-        "status": "Then",
-        "success": false,
-        "message": "Gagal redirect ke halaman penerbangan: Wait timed out after 10191ms",
-        "responseTime": "10192ms"
+        "responseTime": "89ms"
       }
     ],
+    "reward": 1
+  },
+  {
+    "label": "SCENARIO: User sudah login memilih penerbangan",
+    "transitions": [],
     "reward": 0
   }
 ]
