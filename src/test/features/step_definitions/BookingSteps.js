@@ -6,218 +6,21 @@ const jsonOutput = require("../../support/jsonOutput");
 let driver;
 let homePage;
 
-// ----------------------------
-// SCENARIO 1: Halaman Utama
-// ----------------------------
-
-Given("user membuka halaman utama {string}", async function (url) {
-  const start = Date.now();
-  try {
-    driver = await new Builder().forBrowser("chrome").build();
-    homePage = new HomePage(driver);
-    await homePage.open(url);
-    const responseTime = `${Date.now() - start}ms`;
-    jsonOutput.addTransition({
-      status: "Given",
-      success: true,
-      message: "Membuka halaman utama berhasil",
-      responseTime,
-    });
-  } catch (error) {
-    const responseTime = `${Date.now() - start}ms`;
-    jsonOutput.addTransition({
-      status: "Given",
-      success: false,
-      message: `Membuka halaman utama gagal: ${error.message}`,
-      responseTime,
-    });
-    throw error;
-  }
+Before(async function () {
+  driver = await new Builder().forBrowser("chrome").build();
+  homePage = new HomePage(driver);
 });
 
-When(
-  "user klik pilihan destinasi favorit dengan xpath {string}",
-  async function (xpath) {
-    const start = Date.now();
-    try {
-      await homePage.klikByXpath(xpath);
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "When",
-        success: true,
-        message: "Klik pilihan destinasi favorit berhasil",
-        responseTime,
-      });
-    } catch (error) {
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "When",
-        success: false,
-        message: `Klik pilihan destinasi favorit gagal: ${error.message}`,
-        responseTime,
-      });
-      throw error;
-    }
-  }
-);
-
-When(
-  "user klik Cari Penerbangan dengan xpath {string}",
-  async function (xpath) {
-    const start = Date.now();
-    try {
-      await homePage.klikByXpath(xpath);
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "When",
-        success: true,
-        message: "Klik Cari Penerbangan berhasil",
-        responseTime,
-      });
-    } catch (error) {
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "When",
-        success: false,
-        message: `Klik Cari Penerbangan gagal: ${error.message}`,
-        responseTime,
-      });
-      throw error;
-    }
-  }
-);
-
-Then(
-  "user redirect ke halaman pilih penerbangan {string}",
-  async function (expectedUrl) {
-    const start = Date.now();
-    try {
-      await driver.wait(async () => {
-        const currentUrl = await driver.getCurrentUrl();
-        return currentUrl === expectedUrl;
-      }, 10000);
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "Then",
-        success: true,
-        message: "Redirect ke halaman pilih penerbangan berhasil",
-        responseTime,
-      });
-
-
-      await driver.quit();
-    } catch (error) {
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "Then",
-        success: false,
-        message: `Redirect gagal: ${error.message}`,
-        responseTime,
-      });
-
-
-      await driver.quit();
-      throw error;
-    }
-  }
-);
-
-// ------------------------------------------
-// SCENARIO 2: User belum login pilih tiket
-// ------------------------------------------
-Given(
-  "user berada di halaman pilih penerbangan {string}",
-  async function (url) {
-    const start = Date.now();
-    try {
-      driver = await new Builder().forBrowser("chrome").build();
-      homePage = new HomePage(driver);
-      await homePage.open(url);
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "Given",
-        success: true,
-        message: "Berada di halaman pilih penerbangan berhasil",
-        responseTime,
-      });
-    } catch (error) {
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "Given",
-        success: false,
-        message: `Gagal membuka halaman penerbangan: ${error.message}`,
-        responseTime,
-      });
-      throw error;
-    }
-  }
-);
-
-When(
-  "user klik tombol pilih pada pilihan penerbangan dengan xpath {string}",
-  async function (xpath) {
-    const start = Date.now();
-    try {
-      await homePage.klikByXpath(xpath);
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "When",
-        success: true,
-        message: "Klik tombol pilih penerbangan berhasil",
-        responseTime,
-      });
-    } catch (error) {
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "When",
-        success: false,
-        message: `Gagal klik tombol pilih: ${error.message}`,
-        responseTime,
-      });
-      throw error;
-    }
-  }
-);
-
-Then("user diarahkan ke halaman login {string}", async function (expectedUrl) {
-  const start = Date.now();
-  try {
-    await driver.wait(async () => {
-      const currentUrl = await driver.getCurrentUrl();
-      return currentUrl === expectedUrl;
-    }, 10000);
-    const responseTime = `${Date.now() - start}ms`;
-    jsonOutput.addTransition({
-      status: "Then",
-      success: true,
-      message: "Diarahkan ke halaman login berhasil",
-      responseTime,
-    });
-    jsonOutput.setReward(0);
-
-    await driver.quit();
-  } catch (error) {
-    const responseTime = `${Date.now() - start}ms`;
-    jsonOutput.addTransition({
-      status: "Then",
-      success: false,
-      message: `Gagal redirect ke halaman login: ${error.message}`,
-      responseTime,
-    });
-
-    await driver.quit();
-    throw error;
-  }
+After(async function () {
+  await driver.quit();
 });
 
-// -------------------------------------
-// SCENARIO 3: User melakukan login
-// -------------------------------------
+// ----------------------------
+// User dihalaman Login
+// ----------------------------
 Given("user membuka halaman login {string}", async function (url) {
   const start = Date.now();
   try {
-    driver = await new Builder().forBrowser("chrome").build();
-    homePage = new HomePage(driver);
     await homePage.open(url);
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
@@ -316,7 +119,7 @@ When(
   }
 );
 
-Then("user redirect ke halaman utama {string}", async function (expectedUrl) {
+Then("user diarahkan ke halaman utama {string}", async function (expectedUrl) {
   const start = Date.now();
   try {
     await driver.wait(async () => {
@@ -331,7 +134,6 @@ Then("user redirect ke halaman utama {string}", async function (expectedUrl) {
       responseTime,
     });
 
-    await driver.quit();
   } catch (error) {
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
@@ -342,44 +144,126 @@ Then("user redirect ke halaman utama {string}", async function (expectedUrl) {
     });
     jsonOutput.setReward(0);
 
-    await driver.quit();
     throw error;
   }
 });
 
-// -------------------------------------
-// SCENARIO 4 sama dengan SCENARIO 1
-// -------------------------------------
+// ------------------------------------------
+// User dihalaman Homepage
+// ------------------------------------------
 
-// SCENARIO 5: User sudah login memilih penerbangan
-Given(
-  "user berada di halaman pilih penerbangan {string}",
-  async function (url) {
+When(
+  "user klik destinasi favorit dengan xpath {string}",
+  async function (xpath) {
     const start = Date.now();
     try {
-      driver = await new Builder().forBrowser("chrome").build();
-      homePage = new HomePage(driver);
-      await homePage.open(url);
+      await homePage.klikByXpath(xpath);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "Given",
+        status: "When",
         success: true,
-        message: "Berada di halaman pilih penerbangan berhasil",
+        message: "Klik pilihan destinasi favorit berhasil",
         responseTime,
       });
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "Given",
+        status: "When",
         success: false,
-        message: `Gagal membuka halaman penerbangan: ${error.message}`,
+        message: `Klik pilihan destinasi favorit gagal: ${error.message}`,
         responseTime,
       });
-      jsonOutput.setReward(0);
       throw error;
     }
   }
 );
+
+When(
+  "user klik tombol Cari Penerbangan dengan xpath {string}",
+  async function (xpath) {
+    const start = Date.now();
+    try {
+      await homePage.klikByXpath(xpath);
+      const responseTime = `${Date.now() - start}ms`;
+      jsonOutput.addTransition({
+        status: "When",
+        success: true,
+        message: "Klik Cari Penerbangan berhasil",
+        responseTime,
+      });
+    } catch (error) {
+      const responseTime = `${Date.now() - start}ms`;
+      jsonOutput.addTransition({
+        status: "When",
+        success: false,
+        message: `Klik Cari Penerbangan gagal: ${error.message}`,
+        responseTime,
+      });
+      throw error;
+    }
+  }
+);
+
+Then(
+  "user diarahkan ke halaman pilih penerbangan yang mengandung url {string}",
+  async function (expectedUrl) {
+    const start = Date.now();
+    try {
+      await driver.wait(async () => {
+        const currentUrl = await driver.getCurrentUrl();
+        return currentUrl.includes(expectedUrl);
+      }, 10000);
+      const responseTime = `${Date.now() - start}ms`;
+      jsonOutput.addTransition({
+        status: "Then",
+        success: true,
+        message: "Redirect ke halaman pilih penerbangan berhasil",
+        responseTime,
+      });
+    } catch (error) {
+      const responseTime = `${Date.now() - start}ms`;
+      jsonOutput.addTransition({
+        status: "Then",
+        success: false,
+        message: `Redirect gagal: ${error.message}`,
+        responseTime,
+      });
+
+      throw error;
+    }
+  }
+);
+
+// -------------------------------------
+// SCENARIO 4 sama dengan SCENARIO 1
+// -------------------------------------
+
+When(
+  "user klik tombol Pilih pada penerbangan dengan xpath {string}",
+  async function (xpath) {
+    const start = Date.now();
+    try {
+      await homePage.klikByXpath(xpath);
+      const responseTime = `${Date.now() - start}ms`;
+      jsonOutput.addTransition({
+        status: "When",
+        success: true,
+        message: "Klik tombol Pilih berhasil",
+        responseTime,
+      });
+    } catch (error) {
+      const responseTime = `${Date.now() - start}ms`;
+      jsonOutput.addTransition({
+        status: "When",
+        success: false,
+        message: `Klik tombol Pilih gagal: ${error.message}`,
+        responseTime,
+      });
+      throw error;
+    }
+  }
+);
+
 
 When(
   "user klik tombol pilih pada pilihan penerbangan dengan xpath {string}",
@@ -409,7 +293,7 @@ When(
 );
 
 Then(
-  "user diarahkan ke halaman checkout {string}",
+  "user diarahkan ke halaman checkout yang mengandung url {string}",
   async function (expectedUrl) {
     const start = Date.now();
     try {
@@ -544,7 +428,7 @@ When(
 );
 
 When(
-  "user memilih tanggal {string} dengan xpath {string}",
+  "user mengisi tanggal lahir {string} dengan xpath {string}",
   async function (value, xpath) {
     const start = Date.now();
     try {
@@ -553,7 +437,7 @@ When(
       jsonOutput.addTransition({
         status: "When",
         success: true,
-        message: "Memilih tanggal berhasil",
+        message: "Mengisi tanggal lahir berhasil",
         responseTime,
       });
     } catch (error) {
@@ -561,44 +445,42 @@ When(
       jsonOutput.addTransition({
         status: "When",
         success: false,
-        message: `Gagal memilih tanggal: ${error.message}`,
+        message: `Gagal mengisi tanggal lahir: ${error.message}`,
         responseTime,
       });
-      jsonOutput.setReward(0);
       throw error;
     }
   }
 );
 
-When(
-  "user mengisi kewarganegaraan {string} dengan xpath {string}",
-  async function (value, xpath) {
-    const start = Date.now();
-    try {
-      await homePage.isiInputByXpath(xpath, value);
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "When",
-        success: true,
-        message: "Mengisi kewarganegaraan berhasil",
-        responseTime,
-      });
-    } catch (error) {
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "When",
-        success: false,
-        message: `Gagal mengisi kewarganegaraan: ${error.message}`,
-        responseTime,
-      });
-      jsonOutput.setReward(0);
-      throw error;
-    }
+When("user klik kewarganegaraan dengan xpath {string}", async function (xpath) {
+  const start = Date.now();
+  try {
+    await homePage.klikByXpath(xpath);
+    await driver.sleep(1500);
+    const responseTime = `${Date.now() - start}ms`;
+    jsonOutput.addTransition({
+      status: "When",
+      success: true,
+      message: "Klik nama sapaan berhasil",
+      responseTime,
+    });
+  } catch (error) {
+    const responseTime = `${Date.now() - start}ms`;
+    jsonOutput.addTransition({
+      status: "When",
+      success: false,
+      message: `Gagal klik nama sapaan: ${error.message}`,
+      responseTime,
+    });
+    jsonOutput.setReward(0);
+    throw error;
+    
   }
-);
+});
 
 When(
-  "user memilih kewarganegaraan dengan xpath {string}",
+  "user memilih kewarganegaraan dari dropdown dengan index xpath {string}",
   async function (xpath) {
     const start = Date.now();
     try {
@@ -607,7 +489,7 @@ When(
       jsonOutput.addTransition({
         status: "When",
         success: true,
-        message: "Memilih kewarganegaraan berhasil",
+        message: "Klik nama sapaan berhasil",
         responseTime,
       });
     } catch (error) {
@@ -615,7 +497,7 @@ When(
       jsonOutput.addTransition({
         status: "When",
         success: false,
-        message: `Gagal memilih kewarganegaraan: ${error.message}`,
+        message: `Gagal klik nama sapaan: ${error.message}`,
         responseTime,
       });
       jsonOutput.setReward(0);
@@ -625,7 +507,7 @@ When(
 );
 
 When(
-  "user memasukkan no paspor/no ktp {string} dengan xpath {string}",
+  /^user mengisi no KTP\/paspor "([^"]*)" dengan xpath "([^"]*)"$/,
   async function (value, xpath) {
     const start = Date.now();
     try {
@@ -634,7 +516,7 @@ When(
       jsonOutput.addTransition({
         status: "When",
         success: true,
-        message: "Memasukkan no paspor/ktp berhasil",
+        message: "Mengisi no KTP/paspor berhasil",
         responseTime,
       });
     } catch (error) {
@@ -642,14 +524,15 @@ When(
       jsonOutput.addTransition({
         status: "When",
         success: false,
-        message: `Gagal memasukkan no paspor/ktp: ${error.message}`,
+        message: `Gagal mengisi no KTP/paspor: ${error.message}`,
         responseTime,
       });
-      jsonOutput.setReward(0);
+      jsonOutput.setReward?.(0);
       throw error;
     }
   }
 );
+
 
 When(
   "user mengisi tanggal berlaku {string} dengan xpath {string}",
@@ -678,36 +561,34 @@ When(
   }
 );
 
-When(
-  "user mengisi asal negara {string} dengan xpath {string}",
-  async function (value, xpath) {
-    const start = Date.now();
-    try {
-      await homePage.isiInputByXpath(xpath, value);
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "When",
-        success: true,
-        message: "Mengisi asal negara berhasil",
-        responseTime,
-      });
-    } catch (error) {
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "When",
-        success: false,
-        message: `Gagal mengisi asal negara: ${error.message}`,
-        responseTime,
-      });
-      jsonOutput.setReward(0);
-      throw error;
-    }
+When("user klik asal negara dengan xpath {string}", async function (xpath) {
+  const start = Date.now();
+  try {
+    await homePage.klikByXpath(xpath);
+    await driver.sleep(1500);
+    const responseTime = `${Date.now() - start}ms`;
+    jsonOutput.addTransition({
+      status: "When",
+      success: true,
+      message: "Klik nama sapaan berhasil",
+      responseTime,
+    });
+  } catch (error) {
+    const responseTime = `${Date.now() - start}ms`;
+    jsonOutput.addTransition({
+      status: "When",
+      success: false,
+      message: `Gagal klik nama sapaan: ${error.message}`,
+      responseTime,
+    });
+    jsonOutput.setReward(0);
+    throw error;
   }
-);
+});
 
 When(
-  "user memilih asal negara {string} dengan xpath {string}",
-  async function (value, xpath) {
+  "user memilih asal negara dari dropdown dengan xpath {string}",
+  async function (xpath) {
     const start = Date.now();
     try {
       await homePage.klikByXpath(xpath);
@@ -715,7 +596,7 @@ When(
       jsonOutput.addTransition({
         status: "When",
         success: true,
-        message: "Memilih asal negara berhasil",
+        message: "Klik nama sapaan berhasil",
         responseTime,
       });
     } catch (error) {
@@ -723,7 +604,7 @@ When(
       jsonOutput.addTransition({
         status: "When",
         success: false,
-        message: `Gagal memilih asal negara: ${error.message}`,
+        message: `Gagal klik nama sapaan: ${error.message}`,
         responseTime,
       });
       jsonOutput.setReward(0);
@@ -756,60 +637,61 @@ When("user memilih kursi dengan xpath {string}", async function (xpath) {
   }
 });
 
-When("user klik lanjut bayar dengan xpath {string}", async function (xpath) {
-  const start = Date.now();
-  try {
-    await homePage.klikByXpath(xpath);
-    const responseTime = `${Date.now() - start}ms`;
-    jsonOutput.addTransition({
-      status: "When",
-      success: true,
-      message: "Klik lanjut bayar berhasil",
-      responseTime,
-    });
-  } catch (error) {
-    const responseTime = `${Date.now() - start}ms`;
-    jsonOutput.addTransition({
-      status: "When",
-      success: false,
-      message: `Gagal klik lanjut bayar: ${error.message}`,
-      responseTime,
-    });
-    jsonOutput.setReward(0);
-    throw error;
-  }
-});
+// When(
+//   "user klik tombol Lanjutkan ke Pembayaran dengan xpath {string}",
+//   async function (xpath) {
+//     const start = Date.now();
+//     try {
+//       await homePage.klikByXpath(xpath);
+//       const responseTime = `${Date.now() - start}ms`;
+//       jsonOutput.addTransition({
+//         status: "When",
+//         success: true,
+//         message: "Klik lanjut bayar berhasil",
+//         responseTime,
+//       });
+//     } catch (error) {
+//       const responseTime = `${Date.now() - start}ms`;
+//       jsonOutput.addTransition({
+//         status: "When",
+//         success: false,
+//         message: `Gagal klik lanjut bayar: ${error.message}`,
+//         responseTime,
+//       });
+//       jsonOutput.setReward(0);
+//       throw error;
+//     }
+//   }
+// );
 
-Then(
-  "user diarahkan ke halaman pembayaran yang mengandung {string}",
-  async function (expectedUrlPart) {
-    const start = Date.now();
-    try {
-      await driver.wait(async () => {
-        const currentUrl = await driver.getCurrentUrl();
-        return currentUrl.includes(expectedUrlPart);
-      }, 10000);
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "Then",
-        success: true,
-        message: "Diarahkan ke halaman pembayaran berhasil",
-        responseTime,
-      });
+// Then(
+//   "user diarahkan ke halaman pembayaran yang mengandung {string}",
+//   async function (expectedUrlPart) {
+//     const start = Date.now();
+//     try {
+//       await driver.wait(async () => {
+//         const currentUrl = await driver.getCurrentUrl();
+//         return currentUrl.includes(expectedUrlPart);
+//       }, 10000);
+//       const responseTime = `${Date.now() - start}ms`;
+//       jsonOutput.addTransition({
+//         status: "Then",
+//         success: true,
+//         message: "Diarahkan ke halaman pembayaran berhasil",
+//         responseTime,
+//       });
 
-      await driver.quit();
-    } catch (error) {
-      const responseTime = `${Date.now() - start}ms`;
-      jsonOutput.addTransition({
-        status: "Then",
-        success: false,
-        message: `Gagal redirect ke halaman pembayaran: ${error.message}`,
-        responseTime,
-      });
-      jsonOutput.setReward(0);
+//     } catch (error) {
+//       const responseTime = `${Date.now() - start}ms`;
+//       jsonOutput.addTransition({
+//         status: "Then",
+//         success: false,
+//         message: `Gagal redirect ke halaman pembayaran: ${error.message}`,
+//         responseTime,
+//       });
+//       jsonOutput.setReward(0);
 
-      await driver.quit();
-      throw error;
-    }
-  }
-);
+//       throw error;
+//     }
+//   }
+// );

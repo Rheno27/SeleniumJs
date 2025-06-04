@@ -1,0 +1,112 @@
+[
+  {
+    "state": "Membuka halaman login berhasil",
+    "next": "Mengisi email berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Mengisi email berhasil",
+    "next": "Mengisi password berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Mengisi password berhasil",
+    "next": "Klik tombol masuk berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Klik tombol masuk berhasil",
+    "next": "Redirect ke halaman utama berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Redirect ke halaman utama berhasil",
+    "next": "Klik pilihan destinasi favorit berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Klik pilihan destinasi favorit berhasil",
+    "next": "Klik Cari Penerbangan berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Klik Cari Penerbangan berhasil",
+    "next": "Redirect ke halaman pilih penerbangan berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Redirect ke halaman pilih penerbangan berhasil",
+    "next": "Klik tombol Pilih berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Klik tombol Pilih berhasil",
+    "next": "Diarahkan ke halaman checkout berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Diarahkan ke halaman checkout berhasil",
+    "next": "Klik nama sapaan berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Klik nama sapaan berhasil",
+    "next": "Memilih nama sapaan berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Memilih nama sapaan berhasil",
+    "next": "Mengisi nama depan berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Mengisi nama depan berhasil",
+    "next": "Mengisi nama belakang berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Mengisi nama belakang berhasil",
+    "next": "Mengisi tanggal lahir berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Mengisi tanggal lahir berhasil",
+    "next": "Klik nama sapaan berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Klik nama sapaan berhasil",
+    "next": "Klik nama sapaan berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Klik nama sapaan berhasil",
+    "next": "Mengisi no KTP/paspor berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Mengisi no KTP/paspor berhasil",
+    "next": "Mengisi tanggal berlaku berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Mengisi tanggal berlaku berhasil",
+    "next": "Klik nama sapaan berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Klik nama sapaan berhasil",
+    "next": "Klik nama sapaan berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Klik nama sapaan berhasil",
+    "next": "Memilih kursi berhasil",
+    "reward": 1
+  },
+  {
+    "state": "Memilih kursi berhasil",
+    "next": null,
+    "reward": 2
+  }
+]
