@@ -55,13 +55,13 @@ Given("user membuka halaman login {string}", async function (url) {
       message: `Gagal membuka halaman login: ${error.message}`,
       responseTime,
     });
-        this.testErrors = this.testErrors || [];
+    this.testErrors = this.testErrors || [];
     this.testErrors.push(error.message);
   }
 });
 
 When("user mengisi email dan password secara otomatis", async function () {
-  const { type, data } = generateRandomInput(); 
+  const { type, data } = generateRandomInput();
 
   const start = Date.now();
   try {
@@ -90,7 +90,6 @@ When("user mengisi email dan password secara otomatis", async function () {
   }
 });
 
-
 When(
   "user klik masuk untuk login dengan xpath {string}",
   async function (xpath) {
@@ -113,8 +112,8 @@ When(
         message: `Gagal klik tombol masuk: ${error.message}`,
         responseTime,
       });
-          this.testErrors = this.testErrors || [];
-    this.testErrors.push(error.message);
+      this.testErrors = this.testErrors || [];
+      this.testErrors.push(error.message);
     }
   }
 );
@@ -128,23 +127,22 @@ Then("user diarahkan ke halaman utama {string}", async function (expectedUrl) {
     }, 10000);
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      statusCode: "Then",
+      statusCode: "200",
       success: true,
       message: "Redirect ke halaman utama berhasil",
       responseTime,
     });
-
   } catch (error) {
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      statusCode: "Then",
+      statusCode: "408",
       success: false,
       message: `Gagal redirect ke halaman utama: ${error.message}`,
       responseTime,
     });
     jsonOutput.setReward(0);
 
-        this.testErrors = this.testErrors || [];
+    this.testErrors = this.testErrors || [];
     this.testErrors.push(error.message);
   }
 });
@@ -174,8 +172,8 @@ When(
         message: `Klik pilihan destinasi favorit gagal: ${error.message}`,
         responseTime,
       });
-          this.testErrors = this.testErrors || [];
-    this.testErrors.push(error.message);
+      this.testErrors = this.testErrors || [];
+      this.testErrors.push(error.message);
     }
   }
 );
@@ -201,8 +199,8 @@ When(
         message: `Klik Cari Penerbangan gagal: ${error.message}`,
         responseTime,
       });
-          this.testErrors = this.testErrors || [];
-    this.testErrors.push(error.message);
+      this.testErrors = this.testErrors || [];
+      this.testErrors.push(error.message);
     }
   }
 );
@@ -218,7 +216,7 @@ Then(
       }, 10000);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        statusCode: "Then",
+        statusCode: "200",
         success: true,
         message: "Redirect ke halaman pilih penerbangan berhasil",
         responseTime,
@@ -226,14 +224,14 @@ Then(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        statusCode: "Then",
+        statusCode: "408",
         success: false,
         message: `Redirect gagal: ${error.message}`,
         responseTime,
       });
 
-          this.testErrors = this.testErrors || [];
-    this.testErrors.push(error.message);
+      this.testErrors = this.testErrors || [];
+      this.testErrors.push(error.message);
     }
   }
 );
@@ -263,12 +261,11 @@ When(
         message: `Klik tombol Pilih gagal: ${error.message}`,
         responseTime,
       });
-          this.testErrors = this.testErrors || [];
-    this.testErrors.push(error.message);
+      this.testErrors = this.testErrors || [];
+      this.testErrors.push(error.message);
     }
   }
 );
-
 
 When(
   "user klik tombol pilih pada pilihan penerbangan dengan xpath {string}",
@@ -292,8 +289,8 @@ When(
         responseTime,
       });
       jsonOutput.setReward(0);
-          this.testErrors = this.testErrors || [];
-    this.testErrors.push(error.message);
+      this.testErrors = this.testErrors || [];
+      this.testErrors.push(error.message);
     }
   }
 );
@@ -309,7 +306,7 @@ Then(
       }, 10000);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        statusCode: "Then",
+        statusCode: "200",
         success: true,
         message: "Diarahkan ke halaman checkout berhasil",
         responseTime,
@@ -317,20 +314,21 @@ Then(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        statusCode: "Then",
+        statusCode: "408",
         success: false,
         message: `Gagal redirect ke halaman checkout: ${error.message}`,
         responseTime,
       });
       jsonOutput.setReward(0);
-          this.testErrors = this.testErrors || [];
-    this.testErrors.push(error.message);
+      this.testErrors = this.testErrors || [];
+      this.testErrors.push(error.message);
     }
   }
 );
 
 When("user mengisi data penumpang secara otomatis", async function () {
   const { type, data } = generateRandomPassenger();
+  const start = Date.now();
 
   try {
     // Klik dropdown dan pilih title
@@ -384,17 +382,18 @@ When("user mengisi data penumpang secara otomatis", async function () {
       statusCode: "200",
       success: true,
       message: `Berhasil mengisi data penumpang (${type})`,
+      responseTime: `${Date.now() - start}ms`,
     });
   } catch (error) {
     jsonOutput.addTransition({
-      statusCode: "500",
+      statusCode: "408",
       success: false,
       message: `Gagal mengisi data penumpang: ${error.message}`,
+      responseTime: `${Date.now() - start}ms`,
     });
     throw error;
   }
 });
-
 
 // When(
 //   "user klik tombol Lanjutkan ke Pembayaran dengan xpath {string}",
