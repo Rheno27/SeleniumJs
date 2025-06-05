@@ -694,8 +694,4 @@ When("user memilih kursi dengan xpath {string}", async function (xpath) {
 //       throw error;
 //     }
 //   }
-<<<<<<< HEAD
 // );
-=======
-// );
->>>>>>> 581dbef338fc1cb77442661c461513e6d6d8339b
