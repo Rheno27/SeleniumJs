@@ -13,9 +13,9 @@ function startScenario(label) {
   };
 }
 
-function addTransition({ status, success, message, responseTime }) {
+function addTransition({ statusCode, success, message, responseTime }) {
   if (!currentScenario) return;
-  currentScenario.transitions.push({ status, success, message, responseTime });
+  currentScenario.transitions.push({ statusCode, success, message, responseTime });
   if (!success) {
     currentScenario.reward = 1;
   }

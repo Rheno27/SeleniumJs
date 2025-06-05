@@ -24,7 +24,7 @@ Given("user membuka halaman login {string}", async function (url) {
     await homePage.open(url);
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "Given",
+      statusCode: "200",
       success: true,
       message: "Membuka halaman login berhasil",
       responseTime,
@@ -32,7 +32,7 @@ Given("user membuka halaman login {string}", async function (url) {
   } catch (error) {
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "Given",
+      statusCode: "400",
       success: false,
       message: `Gagal membuka halaman login: ${error.message}`,
       responseTime,
@@ -49,7 +49,7 @@ When(
       await homePage.isiInputByXpath(xpath, email);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Mengisi email berhasil",
         responseTime,
@@ -57,7 +57,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal mengisi email: ${error.message}`,
         responseTime,
@@ -75,7 +75,7 @@ When(
       await homePage.isiInputByXpath(xpath, password);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Mengisi password berhasil",
         responseTime,
@@ -83,7 +83,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal mengisi password: ${error.message}`,
         responseTime,
@@ -101,7 +101,7 @@ When(
       await homePage.klikByXpath(xpath);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Klik tombol masuk berhasil",
         responseTime,
@@ -109,7 +109,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal klik tombol masuk: ${error.message}`,
         responseTime,
@@ -128,7 +128,7 @@ Then("user diarahkan ke halaman utama {string}", async function (expectedUrl) {
     }, 10000);
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "Then",
+      statusCode: "Then",
       success: true,
       message: "Redirect ke halaman utama berhasil",
       responseTime,
@@ -137,7 +137,7 @@ Then("user diarahkan ke halaman utama {string}", async function (expectedUrl) {
   } catch (error) {
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "Then",
+      statusCode: "Then",
       success: false,
       message: `Gagal redirect ke halaman utama: ${error.message}`,
       responseTime,
@@ -160,7 +160,7 @@ When(
       await homePage.klikByXpath(xpath);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Klik pilihan destinasi favorit berhasil",
         responseTime,
@@ -168,7 +168,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Klik pilihan destinasi favorit gagal: ${error.message}`,
         responseTime,
@@ -186,7 +186,7 @@ When(
       await homePage.klikByXpath(xpath);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Klik Cari Penerbangan berhasil",
         responseTime,
@@ -194,7 +194,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Klik Cari Penerbangan gagal: ${error.message}`,
         responseTime,
@@ -215,7 +215,7 @@ Then(
       }, 10000);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "Then",
+        statusCode: "Then",
         success: true,
         message: "Redirect ke halaman pilih penerbangan berhasil",
         responseTime,
@@ -223,7 +223,7 @@ Then(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "Then",
+        statusCode: "Then",
         success: false,
         message: `Redirect gagal: ${error.message}`,
         responseTime,
@@ -246,7 +246,7 @@ When(
       await homePage.klikByXpath(xpath);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Klik tombol Pilih berhasil",
         responseTime,
@@ -254,7 +254,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Klik tombol Pilih gagal: ${error.message}`,
         responseTime,
@@ -273,7 +273,7 @@ When(
       await homePage.klikByXpath(xpath);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Klik tombol pilih penerbangan berhasil",
         responseTime,
@@ -281,7 +281,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal klik tombol pilih: ${error.message}`,
         responseTime,
@@ -303,7 +303,7 @@ Then(
       }, 10000);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "Then",
+        statusCode: "Then",
         success: true,
         message: "Diarahkan ke halaman checkout berhasil",
         responseTime,
@@ -311,7 +311,7 @@ Then(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "Then",
+        statusCode: "Then",
         success: false,
         message: `Gagal redirect ke halaman checkout: ${error.message}`,
         responseTime,
@@ -328,7 +328,7 @@ When("user klik nama sapaan dengan xpath {string}", async function (xpath) {
     await homePage.klikByXpath(xpath);
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "When",
+      statusCode: "200",
       success: true,
       message: "Klik nama sapaan berhasil",
       responseTime,
@@ -336,7 +336,7 @@ When("user klik nama sapaan dengan xpath {string}", async function (xpath) {
   } catch (error) {
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "When",
+      statusCode: "408",
       success: false,
       message: `Gagal klik nama sapaan: ${error.message}`,
       responseTime,
@@ -354,7 +354,7 @@ When(
       await homePage.klikByXpath(xpath);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Memilih nama sapaan berhasil",
         responseTime,
@@ -362,7 +362,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal memilih nama sapaan: ${error.message}`,
         responseTime,
@@ -381,7 +381,7 @@ When(
       await homePage.isiInputByXpath(xpath, value);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Mengisi nama depan berhasil",
         responseTime,
@@ -389,7 +389,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal mengisi nama depan: ${error.message}`,
         responseTime,
@@ -408,7 +408,7 @@ When(
       await homePage.isiInputByXpath(xpath, value);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Mengisi nama belakang berhasil",
         responseTime,
@@ -416,7 +416,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal mengisi nama belakang: ${error.message}`,
         responseTime,
@@ -435,7 +435,7 @@ When(
       await homePage.isiInputByXpath(xpath, value);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Mengisi tanggal lahir berhasil",
         responseTime,
@@ -443,7 +443,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal mengisi tanggal lahir: ${error.message}`,
         responseTime,
@@ -460,7 +460,7 @@ When("user klik kewarganegaraan dengan xpath {string}", async function (xpath) {
     await driver.sleep(1500);
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "When",
+      statusCode: "200",
       success: true,
       message: "Klik nama sapaan berhasil",
       responseTime,
@@ -468,7 +468,7 @@ When("user klik kewarganegaraan dengan xpath {string}", async function (xpath) {
   } catch (error) {
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "When",
+      statusCode: "408",
       success: false,
       message: `Gagal klik nama sapaan: ${error.message}`,
       responseTime,
@@ -487,7 +487,7 @@ When(
       await homePage.klikByXpath(xpath);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Klik nama sapaan berhasil",
         responseTime,
@@ -495,7 +495,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal klik nama sapaan: ${error.message}`,
         responseTime,
@@ -514,7 +514,7 @@ When(
       await homePage.isiInputByXpath(xpath, value);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Mengisi no KTP/paspor berhasil",
         responseTime,
@@ -522,7 +522,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal mengisi no KTP/paspor: ${error.message}`,
         responseTime,
@@ -542,7 +542,7 @@ When(
       await homePage.isiInputByXpath(xpath, value);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Mengisi tanggal berlaku berhasil",
         responseTime,
@@ -550,7 +550,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal mengisi tanggal berlaku: ${error.message}`,
         responseTime,
@@ -568,7 +568,7 @@ When("user klik asal negara dengan xpath {string}", async function (xpath) {
     await driver.sleep(1500);
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "When",
+      statusCode: "200",
       success: true,
       message: "Klik nama sapaan berhasil",
       responseTime,
@@ -576,7 +576,7 @@ When("user klik asal negara dengan xpath {string}", async function (xpath) {
   } catch (error) {
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "When",
+      statusCode: "408",
       success: false,
       message: `Gagal klik nama sapaan: ${error.message}`,
       responseTime,
@@ -594,7 +594,7 @@ When(
       await homePage.klikByXpath(xpath);
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "200",
         success: true,
         message: "Klik nama sapaan berhasil",
         responseTime,
@@ -602,7 +602,7 @@ When(
     } catch (error) {
       const responseTime = `${Date.now() - start}ms`;
       jsonOutput.addTransition({
-        status: "When",
+        statusCode: "408",
         success: false,
         message: `Gagal klik nama sapaan: ${error.message}`,
         responseTime,
@@ -619,7 +619,7 @@ When("user memilih kursi dengan xpath {string}", async function (xpath) {
     await homePage.klikByXpath(xpath);
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "When",
+      statusCode: "200",
       success: true,
       message: "Memilih kursi berhasil",
       responseTime,
@@ -627,7 +627,7 @@ When("user memilih kursi dengan xpath {string}", async function (xpath) {
   } catch (error) {
     const responseTime = `${Date.now() - start}ms`;
     jsonOutput.addTransition({
-      status: "When",
+      statusCode: "408",
       success: false,
       message: `Gagal memilih kursi: ${error.message}`,
       responseTime,
@@ -645,7 +645,7 @@ When("user memilih kursi dengan xpath {string}", async function (xpath) {
 //       await homePage.klikByXpath(xpath);
 //       const responseTime = `${Date.now() - start}ms`;
 //       jsonOutput.addTransition({
-//         status: "When",
+//         statusCode: "200",
 //         success: true,
 //         message: "Klik lanjut bayar berhasil",
 //         responseTime,
@@ -653,7 +653,7 @@ When("user memilih kursi dengan xpath {string}", async function (xpath) {
 //     } catch (error) {
 //       const responseTime = `${Date.now() - start}ms`;
 //       jsonOutput.addTransition({
-//         status: "When",
+//         statusCode: "408",
 //         success: false,
 //         message: `Gagal klik lanjut bayar: ${error.message}`,
 //         responseTime,
@@ -675,7 +675,7 @@ When("user memilih kursi dengan xpath {string}", async function (xpath) {
 //       }, 10000);
 //       const responseTime = `${Date.now() - start}ms`;
 //       jsonOutput.addTransition({
-//         status: "Then",
+//         statusCode: "Then",
 //         success: true,
 //         message: "Diarahkan ke halaman pembayaran berhasil",
 //         responseTime,
@@ -684,7 +684,7 @@ When("user memilih kursi dengan xpath {string}", async function (xpath) {
 //     } catch (error) {
 //       const responseTime = `${Date.now() - start}ms`;
 //       jsonOutput.addTransition({
-//         status: "Then",
+//         statusCode: "Then",
 //         success: false,
 //         message: `Gagal redirect ke halaman pembayaran: ${error.message}`,
 //         responseTime,

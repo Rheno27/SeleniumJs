@@ -1,0 +1,140 @@
+[
+  {
+    "label": "SCENARIO: User berhasil login dan memesan tiket penerbangan",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "577ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Mengisi email berhasil",
+        "responseTime": "619ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Mengisi password berhasil",
+        "responseTime": "212ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "74ms"
+      },
+      {
+        "statusCode": "Then",
+        "success": true,
+        "message": "Redirect ke halaman utama berhasil",
+        "responseTime": "233ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik pilihan destinasi favorit berhasil",
+        "responseTime": "437ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik Cari Penerbangan berhasil",
+        "responseTime": "124ms"
+      },
+      {
+        "statusCode": "Then",
+        "success": true,
+        "message": "Redirect ke halaman pilih penerbangan berhasil",
+        "responseTime": "19ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol Pilih berhasil",
+        "responseTime": "374ms"
+      },
+      {
+        "statusCode": "Then",
+        "success": true,
+        "message": "Diarahkan ke halaman checkout berhasil",
+        "responseTime": "5ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik nama sapaan berhasil",
+        "responseTime": "266ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Memilih nama sapaan berhasil",
+        "responseTime": "42ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Mengisi nama depan berhasil",
+        "responseTime": "125ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Mengisi nama belakang berhasil",
+        "responseTime": "142ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Mengisi tanggal lahir berhasil",
+        "responseTime": "114ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik nama sapaan berhasil",
+        "responseTime": "1595ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik nama sapaan berhasil",
+        "responseTime": "59ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Mengisi no KTP/paspor berhasil",
+        "responseTime": "175ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Mengisi tanggal berlaku berhasil",
+        "responseTime": "129ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik nama sapaan berhasil",
+        "responseTime": "1608ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik nama sapaan berhasil",
+        "responseTime": "58ms"
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Memilih kursi berhasil",
+        "responseTime": "52ms"
+      }
+    ],
+    "reward": 0
+  }
+]
