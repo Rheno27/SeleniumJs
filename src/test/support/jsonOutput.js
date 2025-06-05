@@ -30,8 +30,17 @@ function endScenario() {
 
 function saveResults() {
   const outputPath = path.join(__dirname, "../../output/test-results.json");
-  console.log("Saving result:", results); // Debug
-  fs.writeFileSync(outputPath, JSON.stringify(results, null, 2), "utf-8");
+
+  let existingData = [];
+  if (fs.existsSync(outputPath)) {
+    const fileContent = fs.readFileSync(outputPath, "utf-8");
+    existingData = JSON.parse(fileContent);
+  }
+
+  const combinedData = [...existingData, ...results];
+
+  console.log("Saving result:", combinedData); // Debug
+  fs.writeFileSync(outputPath, JSON.stringify(combinedData, null, 2), "utf-8");
 }
 
 module.exports = {
