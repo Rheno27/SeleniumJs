@@ -1,7 +1,7 @@
 const { spawn } = require("child_process");
 
 const config = {
-  maxRuns: 3, 
+  maxRuns: 10, 
   delayBetweenRuns: 3000, // delay antar run (ms)
   cucumberCommand: "npx",
   cucumberArgs: ["cucumber-js"],

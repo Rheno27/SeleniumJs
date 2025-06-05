@@ -1,12 +1,12 @@
 {
   "dependencies": {
     "@cucumber/cucumber": "^11.3.0",
+    "@faker-js/faker": "^9.8.0",
     "selenium-webdriver": "^4.33.0"
   },
   "name": "selenium-test",
   "version": "1.0.0",
   "main": "cucumber.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "runner": "node src/test/runners/runner.js"
