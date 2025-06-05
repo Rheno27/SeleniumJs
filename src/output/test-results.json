@@ -6,133 +6,133 @@
         "status": "Given",
         "success": true,
         "message": "Membuka halaman login berhasil",
-        "responseTime": "749ms"
+        "responseTime": "689ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Mengisi email berhasil",
-        "responseTime": "617ms"
+        "responseTime": "530ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Mengisi password berhasil",
-        "responseTime": "124ms"
+        "responseTime": "188ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik tombol masuk berhasil",
-        "responseTime": "76ms"
+        "responseTime": "77ms"
       },
       {
         "status": "Then",
         "success": true,
         "message": "Redirect ke halaman utama berhasil",
-        "responseTime": "229ms"
+        "responseTime": "216ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik pilihan destinasi favorit berhasil",
-        "responseTime": "304ms"
+        "responseTime": "325ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik Cari Penerbangan berhasil",
-        "responseTime": "216ms"
+        "responseTime": "125ms"
       },
       {
         "status": "Then",
         "success": true,
         "message": "Redirect ke halaman pilih penerbangan berhasil",
-        "responseTime": "17ms"
+        "responseTime": "20ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik tombol Pilih berhasil",
-        "responseTime": "346ms"
+        "responseTime": "338ms"
       },
       {
         "status": "Then",
         "success": true,
         "message": "Diarahkan ke halaman checkout berhasil",
-        "responseTime": "7ms"
+        "responseTime": "16ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik nama sapaan berhasil",
-        "responseTime": "281ms"
+        "responseTime": "159ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Memilih nama sapaan berhasil",
-        "responseTime": "51ms"
+        "responseTime": "37ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Mengisi nama depan berhasil",
-        "responseTime": "151ms"
+        "responseTime": "166ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Mengisi nama belakang berhasil",
-        "responseTime": "174ms"
+        "responseTime": "148ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Mengisi tanggal lahir berhasil",
-        "responseTime": "132ms"
+        "responseTime": "115ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik nama sapaan berhasil",
-        "responseTime": "1592ms"
+        "responseTime": "1624ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik nama sapaan berhasil",
-        "responseTime": "72ms"
+        "responseTime": "63ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Mengisi no KTP/paspor berhasil",
-        "responseTime": "239ms"
+        "responseTime": "197ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Mengisi tanggal berlaku berhasil",
-        "responseTime": "133ms"
+        "responseTime": "89ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik nama sapaan berhasil",
-        "responseTime": "1592ms"
+        "responseTime": "1561ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik nama sapaan berhasil",
-        "responseTime": "65ms"
+        "responseTime": "81ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Memilih kursi berhasil",
-        "responseTime": "71ms"
+        "responseTime": "54ms"
       }
     ],
     "reward": 0
