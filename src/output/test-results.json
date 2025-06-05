@@ -1,102 +1,140 @@
 [
   {
-    "label": "SCENARIO: User belum login memilih salahsatu destinasi tujuan",
+    "label": "SCENARIO: User berhasil login dan memesan tiket penerbangan",
     "transitions": [
       {
         "status": "Given",
         "success": true,
-        "message": "Membuka halaman utama berhasil",
-        "responseTime": "1254ms"
-      },
-      {
-        "status": "When",
-        "success": true,
-        "message": "Klik pilihan destinasi favorit berhasil",
-        "responseTime": "773ms"
-      },
-      {
-        "status": "When",
-        "success": true,
-        "message": "Klik Cari Penerbangan berhasil",
-        "responseTime": "117ms"
-      }
-    ],
-    "reward": 0
-  },
-  {
-    "label": "SCENARIO: User belum login memilih penerbangan",
-    "transitions": [],
-    "reward": 0
-  },
-  {
-    "label": "SCENARIO: User melakukan login",
-    "transitions": [
-      {
-        "status": "Given",
-        "success": true,
-        "message": "Membuka halaman utama berhasil",
-        "responseTime": "1282ms"
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "749ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Mengisi email berhasil",
-        "responseTime": "592ms"
+        "responseTime": "617ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Mengisi password berhasil",
-        "responseTime": "256ms"
+        "responseTime": "124ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik tombol masuk berhasil",
-        "responseTime": "58ms"
+        "responseTime": "76ms"
       },
       {
         "status": "Then",
         "success": true,
         "message": "Redirect ke halaman utama berhasil",
-        "responseTime": "279ms"
-      }
-    ],
-    "reward": 0
-  },
-  {
-    "label": "SCENARIO: User setelah login memilih salahsatu destinasi tujuan",
-    "transitions": [
-      {
-        "status": "Then",
-        "success": false,
-        "message": "Redirect gagal: This driver instance does not have a valid session ID (did you call WebDriver.quit()?) and may no longer be used.",
-        "responseTime": "7602ms"
-      },
-      {
-        "status": "Given",
-        "success": true,
-        "message": "Membuka halaman utama berhasil",
-        "responseTime": "1290ms"
+        "responseTime": "229ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik pilihan destinasi favorit berhasil",
-        "responseTime": "536ms"
+        "responseTime": "304ms"
       },
       {
         "status": "When",
         "success": true,
         "message": "Klik Cari Penerbangan berhasil",
-        "responseTime": "89ms"
+        "responseTime": "216ms"
+      },
+      {
+        "status": "Then",
+        "success": true,
+        "message": "Redirect ke halaman pilih penerbangan berhasil",
+        "responseTime": "17ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Klik tombol Pilih berhasil",
+        "responseTime": "346ms"
+      },
+      {
+        "status": "Then",
+        "success": true,
+        "message": "Diarahkan ke halaman checkout berhasil",
+        "responseTime": "7ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Klik nama sapaan berhasil",
+        "responseTime": "281ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Memilih nama sapaan berhasil",
+        "responseTime": "51ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Mengisi nama depan berhasil",
+        "responseTime": "151ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Mengisi nama belakang berhasil",
+        "responseTime": "174ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Mengisi tanggal lahir berhasil",
+        "responseTime": "132ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Klik nama sapaan berhasil",
+        "responseTime": "1592ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Klik nama sapaan berhasil",
+        "responseTime": "72ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Mengisi no KTP/paspor berhasil",
+        "responseTime": "239ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Mengisi tanggal berlaku berhasil",
+        "responseTime": "133ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Klik nama sapaan berhasil",
+        "responseTime": "1592ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Klik nama sapaan berhasil",
+        "responseTime": "65ms"
+      },
+      {
+        "status": "When",
+        "success": true,
+        "message": "Memilih kursi berhasil",
+        "responseTime": "71ms"
       }
     ],
-    "reward": 1
-  },
-  {
-    "label": "SCENARIO: User sudah login memilih penerbangan",
-    "transitions": [],
     "reward": 0
   }
 ]
