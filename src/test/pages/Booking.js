@@ -10,6 +10,7 @@ class HomePage {
   }
 
   async klikByXpath(xpath) {
+    console.log("Mencoba klik elemen dengan XPath:", xpath);
     await this.driver.wait(until.elementLocated(By.xpath(xpath)), 10000);
     const elemen = await this.driver.findElement(By.xpath(xpath));
 
@@ -20,8 +21,8 @@ class HomePage {
     );
 
     // Tunggu elemen benar-benar bisa diklik
-    await this.driver.wait(until.elementIsVisible(elemen), 5000);
-    await this.driver.wait(until.elementIsEnabled(elemen), 5000);
+    await this.driver.wait(until.elementIsVisible(elemen), 15000);
+    await this.driver.wait(until.elementIsEnabled(elemen), 15000);
 
     // Gunakan JavaScript click (bypass masalah "intercepted")
     await this.driver.executeScript("arguments[0].click();", elemen);

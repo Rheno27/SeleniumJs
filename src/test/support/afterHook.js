@@ -12,6 +12,16 @@ AfterAll(function () {
   jsonOutput.saveResults(); // menyimpan semua hasil ke file JSON
 });
 
+After(function () {
+  if (this.testErrors && this.testErrors.length > 0) {
+    console.log("⚠️ Ada error di step, tetapi semua step tetap dijalankan:");
+    this.testErrors.forEach((err, idx) => console.log(`${idx + 1}. ${err}`));
+
+    // Paksa skenario dianggap gagal agar muncul di report
+    throw new Error("Skenario mengandung error di beberapa step.");
+  }
+});
+
 // const { After, BeforeStep, AfterStep } = require("@cucumber/cucumber");
 // const jsonOutput = require("./jsonOutput");
 
