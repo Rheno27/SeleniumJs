@@ -14,7 +14,7 @@ function startScenario(label) {
   console.log("Mulai Scenario:", label);
   currentScenario = {
     label,
-    transitions: [], 
+    transitions: [],
   };
 }
 
@@ -27,7 +27,7 @@ function addTransition({ statusCode, success, message, responseTime }) {
     success,
     message,
     responseTime,
-    reward, 
+    reward,
   });
 }
 
@@ -36,6 +36,93 @@ function endScenario() {
     results.push(currentScenario);
     currentScenario = null;
   }
+}
+function hitungRewardPerStep() {
+  const outputPath = path.join(__dirname, "../../output/test-results.json");
+  const mrpResultPath = path.join(__dirname, "../../output/MRP-result.json");
+
+  if (!fs.existsSync(outputPath)) {
+    console.log("❌ File hasil tidak ditemukan.");
+    return;
+  }
+
+  const fileContent = fs.readFileSync(outputPath, "utf-8");
+  const data = JSON.parse(fileContent);
+
+  const stepRewards = {};
+
+  for (const scenario of data) {
+    scenario.transitions.forEach((step, index) => {
+      const stepKey = `step_${index + 1}`;
+      if (!stepRewards[stepKey]) {
+        stepRewards[stepKey] = 0;
+      }
+      stepRewards[stepKey] += step.reward || 0;
+    });
+  }
+
+  console.log("\n📊 Total Reward per Step (semua run):");
+  Object.entries(stepRewards).forEach(([step, total]) => {
+    console.log(`  ${step}: ${total}`);
+  });
+
+  // save to MRP-result.json
+  const mrpResult = {
+    stepRewards,
+    pageRewards: {}, 
+  };
+  fs.writeFileSync(mrpResultPath, JSON.stringify(mrpResult, null, 2), "utf-8");
+}
+function hitungRewardPerPage() {
+  const outputPath = path.join(__dirname, "../../output/test-results.json");
+  const mrpResultPath = path.join(__dirname, "../../output/MRP-result.json");
+
+  if (!fs.existsSync(outputPath)) {
+    console.log("❌ File hasil tidak ditemukan.");
+    return;
+  }
+
+  const fileContent = fs.readFileSync(outputPath, "utf-8");
+  const data = JSON.parse(fileContent);
+
+  const pageReward = {
+    page_1: 0, // step 1-4
+    page_2: 0, // step 5-7
+    page_3: 0, // step 8-9
+    page_4: 0, // step 10
+  };
+
+  for (const scenario of data) {
+    scenario.transitions.forEach((step, index) => {
+      const stepNum = index + 1;
+
+      if (stepNum >= 1 && stepNum <= 4) {
+        pageReward.page_1 += step.reward || 0;
+      } else if (stepNum >= 5 && stepNum <= 7) {
+        pageReward.page_2 += step.reward || 0;
+      } else if (stepNum >= 8 && stepNum <= 9) {
+        pageReward.page_3 += step.reward || 0;
+      } else if (stepNum >= 10) {
+        pageReward.page_4 += step.reward || 0;
+      }
+    });
+  }
+
+  console.log("\n📊 Total Reward per Page:");
+  Object.entries(pageReward).forEach(([page, total]) => {
+    console.log(`  ${page}: ${total}`);
+  });
+
+  let mrpResult = {};
+  if (fs.existsSync(mrpResultPath)) {
+    const mrpContent = fs.readFileSync(mrpResultPath, "utf-8");
+    mrpResult = JSON.parse(mrpContent);
+  }
+
+  // Update pageRewards
+  mrpResult.pageRewards = pageReward;
+
+  fs.writeFileSync(mrpResultPath, JSON.stringify(mrpResult, null, 2), "utf-8");
 }
 
 function saveResults() {
@@ -58,4 +145,6 @@ module.exports = {
   addTransition,
   endScenario,
   saveResults,
+  hitungRewardPerStep,
+  hitungRewardPerPage,
 };

@@ -1,13 +1,37 @@
 const { spawn } = require("child_process");
+const fs = require("fs");
+const path = require("path");
+const {
+  hitungRewardPerStep,
+  hitungRewardPerPage,
+} = require("../support/jsonOutput");
+const { evaluasiISO25010 } = require("../support/evaluationISO");
 
 const config = {
-  maxRuns: 10, 
+  maxRuns: 2,
   delayBetweenRuns: 3000, // delay antar run (ms)
   cucumberCommand: "npx",
   cucumberArgs: ["cucumber-js"],
 };
 
 let currentRun = 0;
+
+function clearTestResults() {
+  const testResultsPath = path.join(
+    __dirname,
+    "../../output/test-results.json"
+  );
+  try {
+    fs.writeFileSync(testResultsPath, "[]");
+    console.log("✅ File test-results.json berhasil dikosongkan");
+  } catch (error) {
+    console.error(
+      "❌ Gagal mengosongkan file test-results.json:",
+      error.message
+    );
+    process.exit(1);
+  }
+}
 
 function runCucumber() {
   currentRun++;
@@ -43,6 +67,9 @@ function runCucumber() {
       setTimeout(runCucumber, config.delayBetweenRuns);
     } else {
       console.log("\n🎉 Semua run selesai!");
+      hitungRewardPerStep();
+      hitungRewardPerPage();
+      evaluasiISO25010();
       process.exit(0);
     }
   });
@@ -54,4 +81,5 @@ process.on("uncaughtException", (error) => {
 });
 
 console.log("=== Memulai eksekusi otomatis Cucumber ===");
+clearTestResults();
 runCucumber();

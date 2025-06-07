@@ -1,0 +1,20 @@
+{
+  "stepRewards": {
+    "step_1": 0,
+    "step_2": 0,
+    "step_3": 0,
+    "step_4": 0,
+    "step_5": 0,
+    "step_6": 0,
+    "step_7": 0,
+    "step_8": 0,
+    "step_9": 0,
+    "step_10": 2
+  },
+  "pageRewards": {
+    "page_1": 0,
+    "page_2": 0,
+    "page_3": 0,
+    "page_4": 2
+  }
+}
