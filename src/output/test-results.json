@@ -1,1 +1,302 @@
-[]
+[
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "4415ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (valid)",
+        "responseTime": "2275ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1066ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman utama berhasil",
+        "responseTime": "2458ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik pilihan destinasi favorit berhasil",
+        "responseTime": "1529ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik Cari Penerbangan berhasil",
+        "responseTime": "109ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman pilih penerbangan berhasil",
+        "responseTime": "7ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol Pilih berhasil",
+        "responseTime": "614ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Diarahkan ke halaman checkout berhasil",
+        "responseTime": "3ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil mengisi data penumpang (valid)",
+        "responseTime": "1555ms",
+        "reward": 2
+      }
+    ]
+  },
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "1624ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (valid)",
+        "responseTime": "2275ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1065ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman utama berhasil",
+        "responseTime": "4ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik pilihan destinasi favorit berhasil",
+        "responseTime": "94ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik Cari Penerbangan berhasil",
+        "responseTime": "185ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman pilih penerbangan berhasil",
+        "responseTime": "24ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol Pilih berhasil",
+        "responseTime": "324ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Diarahkan ke halaman checkout berhasil",
+        "responseTime": "6ms",
+        "reward": 2
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil mengisi data penumpang (valid)",
+        "responseTime": "1259ms",
+        "reward": 2
+      }
+    ]
+  },
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "1850ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (valid)",
+        "responseTime": "2359ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1080ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman utama berhasil",
+        "responseTime": "7ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik pilihan destinasi favorit berhasil",
+        "responseTime": "88ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik Cari Penerbangan berhasil",
+        "responseTime": "133ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman pilih penerbangan berhasil",
+        "responseTime": "7ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol Pilih berhasil",
+        "responseTime": "437ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Diarahkan ke halaman checkout berhasil",
+        "responseTime": "8ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil mengisi data penumpang (valid)",
+        "responseTime": "1917ms",
+        "reward": 0
+      }
+    ]
+  },
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "1672ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (valid)",
+        "responseTime": "2344ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1074ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman utama berhasil",
+        "responseTime": "5ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik pilihan destinasi favorit berhasil",
+        "responseTime": "66ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik Cari Penerbangan berhasil",
+        "responseTime": "72ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman pilih penerbangan berhasil",
+        "responseTime": "6ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol Pilih berhasil",
+        "responseTime": "311ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Diarahkan ke halaman checkout berhasil",
+        "responseTime": "6ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal mengisi data penumpang: Waiting until element is enabled\nWait timed out after 15014ms",
+        "responseTime": "15313ms",
+        "reward": 1
+      }
+    ]
+  }
+]

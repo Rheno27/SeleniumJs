@@ -4,21 +4,31 @@ const path = require("path");
 const results = [];
 let currentScenario = null;
 
+function calculateReward(statusCode, success) {
+  if (success === true) return 0;
+  else if (statusCode === "408") return 1;
+  else return 2;
+}
+
 function startScenario(label) {
-  console.log("Mulai Scenario:", label); // Debug
+  console.log("Mulai Scenario:", label);
   currentScenario = {
     label,
-    transitions: [],
-    reward: 0,
+    transitions: [], 
   };
 }
 
 function addTransition({ statusCode, success, message, responseTime }) {
   if (!currentScenario) return;
-  currentScenario.transitions.push({ statusCode, success, message, responseTime });
-  if (!success) {
-    currentScenario.reward = 1;
-  }
+
+  const reward = calculateReward(statusCode, success);
+  currentScenario.transitions.push({
+    statusCode,
+    success,
+    message,
+    responseTime,
+    reward, 
+  });
 }
 
 function endScenario() {
@@ -39,7 +49,7 @@ function saveResults() {
 
   const combinedData = [...existingData, ...results];
 
-  console.log("Saving result:", combinedData); // Debug
+  console.log("Saving result:", combinedData);
   fs.writeFileSync(outputPath, JSON.stringify(combinedData, null, 2), "utf-8");
 }
 
