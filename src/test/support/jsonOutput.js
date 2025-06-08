@@ -37,6 +37,7 @@ function endScenario() {
     currentScenario = null;
   }
 }
+
 function hitungRewardPerStep() {
   const outputPath = path.join(__dirname, "../../output/test-results.json");
   const mrpResultPath = path.join(__dirname, "../../output/MRP-result.json");
@@ -69,10 +70,11 @@ function hitungRewardPerStep() {
   // save to MRP-result.json
   const mrpResult = {
     stepRewards,
-    pageRewards: {}, 
+    pageRewards: {},
   };
   fs.writeFileSync(mrpResultPath, JSON.stringify(mrpResult, null, 2), "utf-8");
 }
+
 function hitungRewardPerPage() {
   const outputPath = path.join(__dirname, "../../output/test-results.json");
   const mrpResultPath = path.join(__dirname, "../../output/MRP-result.json");
@@ -113,14 +115,29 @@ function hitungRewardPerPage() {
     console.log(`  ${page}: ${total}`);
   });
 
+  // Menambahkan perangkingan halaman
+  console.log("\n🏆 Perangkingan Halaman berdasarkan Reward:");
+  const sortedPages = Object.entries(pageReward)
+    .sort(([, a], [, b]) => b - a)
+    .map(([page, reward], index) => ({
+      rank: index + 1,
+      page,
+      reward,
+    }));
+
+  sortedPages.forEach(({ rank, page, reward }) => {
+    console.log(`  ${rank}. ${page}: ${reward} reward`);
+  });
+
   let mrpResult = {};
   if (fs.existsSync(mrpResultPath)) {
     const mrpContent = fs.readFileSync(mrpResultPath, "utf-8");
     mrpResult = JSON.parse(mrpContent);
   }
 
-  // Update pageRewards
+  // Update pageRewards dan tambahkan ranking
   mrpResult.pageRewards = pageReward;
+  mrpResult.pageRanking = sortedPages;
 
   fs.writeFileSync(mrpResultPath, JSON.stringify(mrpResult, null, 2), "utf-8");
 }
@@ -140,6 +157,16 @@ function saveResults() {
   fs.writeFileSync(outputPath, JSON.stringify(combinedData, null, 2), "utf-8");
 }
 
+function setReward(reward) {
+  if (!currentScenario) return;
+
+  const lastTransition =
+    currentScenario.transitions[currentScenario.transitions.length - 1];
+  if (lastTransition) {
+    lastTransition.reward = reward;
+  }
+}
+
 module.exports = {
   startScenario,
   addTransition,
@@ -147,4 +174,5 @@ module.exports = {
   saveResults,
   hitungRewardPerStep,
   hitungRewardPerPage,
+  setReward,
 };

@@ -8,8 +8,8 @@ const {
 const { evaluasiISO25010 } = require("../support/evaluationISO");
 
 const config = {
-  maxRuns: 2,
-  delayBetweenRuns: 3000, // delay antar run (ms)
+  maxRuns: 10,
+  delayBetweenRuns: 3000, 
   cucumberCommand: "npx",
   cucumberArgs: ["cucumber-js"],
 };

@@ -4,17 +4,39 @@
     "step_2": 0,
     "step_3": 0,
     "step_4": 0,
-    "step_5": 0,
-    "step_6": 0,
-    "step_7": 0,
-    "step_8": 0,
+    "step_5": 4,
+    "step_6": 4,
+    "step_7": 4,
+    "step_8": 4,
     "step_9": 0,
-    "step_10": 2
+    "step_10": 5
   },
   "pageRewards": {
     "page_1": 0,
-    "page_2": 0,
-    "page_3": 0,
-    "page_4": 2
-  }
+    "page_2": 12,
+    "page_3": 4,
+    "page_4": 5
+  },
+  "pageRanking": [
+    {
+      "rank": 1,
+      "page": "page_2",
+      "reward": 12
+    },
+    {
+      "rank": 2,
+      "page": "page_4",
+      "reward": 5
+    },
+    {
+      "rank": 3,
+      "page": "page_3",
+      "reward": 4
+    },
+    {
+      "rank": 4,
+      "page": "page_1",
+      "reward": 0
+    }
+  ]
 }

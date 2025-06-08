@@ -6,21 +6,171 @@
         "statusCode": "200",
         "success": true,
         "message": "Membuka halaman login berhasil",
-        "responseTime": "1640ms",
+        "responseTime": "1607ms",
         "reward": 0
       },
       {
         "statusCode": "200",
         "success": true,
-        "message": "Berhasil isi input login (valid)",
-        "responseTime": "2284ms",
+        "message": "Berhasil isi input login (empty)",
+        "responseTime": "2299ms",
         "reward": 0
       },
       {
         "statusCode": "200",
         "success": true,
         "message": "Klik tombol masuk berhasil",
-        "responseTime": "1076ms",
+        "responseTime": "1069ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal redirect ke halaman utama: Wait timed out after 10139ms",
+        "responseTime": "10139ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik pilihan destinasi favorit gagal: Waiting for element to be located By(xpath, //p[normalize-space()='Tangerang -> Los Angeles'])\nWait timed out after 10193ms",
+        "responseTime": "10193ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik Cari Penerbangan gagal: Waiting for element to be located By(xpath, //button[@class='bg-darkblue4 text-white p-2 rounded-lg'])\nWait timed out after 10213ms",
+        "responseTime": "10214ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Redirect gagal: Wait timed out after 10149ms",
+        "responseTime": "10149ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik tombol Pilih gagal: Waiting for element to be located By(xpath, //button[normalize-space()='Pilih'])\nWait timed out after 10012ms",
+        "responseTime": "10012ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal redirect ke halaman checkout: Wait timed out after 10161ms",
+        "responseTime": "10161ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal mengisi data penumpang: Waiting for element to be located By(xpath, //select[@placeholder='Pilih `Title`'])\nWait timed out after 10037ms",
+        "responseTime": "10037ms",
+        "reward": 1
+      }
+    ]
+  },
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "1560ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (valid)",
+        "responseTime": "2241ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1075ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman utama berhasil",
+        "responseTime": "6ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik pilihan destinasi favorit berhasil",
+        "responseTime": "71ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik Cari Penerbangan berhasil",
+        "responseTime": "72ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman pilih penerbangan berhasil",
+        "responseTime": "4ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol Pilih berhasil",
+        "responseTime": "292ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Diarahkan ke halaman checkout berhasil",
+        "responseTime": "7ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal mengisi data penumpang: Waiting until element is enabled\nWait timed out after 15139ms",
+        "responseTime": "15439ms",
+        "reward": 1
+      }
+    ]
+  },
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "1593ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (valid)",
+        "responseTime": "2256ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1066ms",
         "reward": 0
       },
       {
@@ -34,43 +184,43 @@
         "statusCode": "200",
         "success": true,
         "message": "Klik pilihan destinasi favorit berhasil",
-        "responseTime": "77ms",
+        "responseTime": "67ms",
         "reward": 0
       },
       {
         "statusCode": "200",
         "success": true,
         "message": "Klik Cari Penerbangan berhasil",
-        "responseTime": "87ms",
+        "responseTime": "77ms",
         "reward": 0
       },
       {
         "statusCode": "200",
         "success": true,
         "message": "Redirect ke halaman pilih penerbangan berhasil",
-        "responseTime": "7ms",
+        "responseTime": "9ms",
         "reward": 0
       },
       {
         "statusCode": "200",
         "success": true,
         "message": "Klik tombol Pilih berhasil",
-        "responseTime": "334ms",
+        "responseTime": "292ms",
         "reward": 0
       },
       {
         "statusCode": "200",
         "success": true,
         "message": "Diarahkan ke halaman checkout berhasil",
-        "responseTime": "6ms",
+        "responseTime": "7ms",
         "reward": 0
       },
       {
-        "statusCode": "408",
-        "success": false,
-        "message": "Gagal mengisi data penumpang: Waiting until element is enabled\nWait timed out after 15024ms",
-        "responseTime": "15312ms",
-        "reward": 1
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil mengisi data penumpang (valid)",
+        "responseTime": "1177ms",
+        "reward": 0
       }
     ]
   },
@@ -81,21 +231,21 @@
         "statusCode": "200",
         "success": true,
         "message": "Membuka halaman login berhasil",
-        "responseTime": "1629ms",
+        "responseTime": "1571ms",
         "reward": 0
       },
       {
         "statusCode": "200",
         "success": true,
         "message": "Berhasil isi input login (valid)",
-        "responseTime": "2311ms",
+        "responseTime": "2263ms",
         "reward": 0
       },
       {
         "statusCode": "200",
         "success": true,
         "message": "Klik tombol masuk berhasil",
-        "responseTime": "1073ms",
+        "responseTime": "1084ms",
         "reward": 0
       },
       {
@@ -109,14 +259,14 @@
         "statusCode": "200",
         "success": true,
         "message": "Klik pilihan destinasi favorit berhasil",
-        "responseTime": "80ms",
+        "responseTime": "76ms",
         "reward": 0
       },
       {
         "statusCode": "200",
         "success": true,
         "message": "Klik Cari Penerbangan berhasil",
-        "responseTime": "90ms",
+        "responseTime": "84ms",
         "reward": 0
       },
       {
@@ -130,21 +280,471 @@
         "statusCode": "200",
         "success": true,
         "message": "Klik tombol Pilih berhasil",
-        "responseTime": "307ms",
+        "responseTime": "314ms",
         "reward": 0
       },
       {
         "statusCode": "200",
         "success": true,
         "message": "Diarahkan ke halaman checkout berhasil",
-        "responseTime": "7ms",
+        "responseTime": "6ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil mengisi data penumpang (valid)",
+        "responseTime": "1732ms",
+        "reward": 0
+      }
+    ]
+  },
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "1585ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (invalid)",
+        "responseTime": "2309ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1057ms",
         "reward": 0
       },
       {
         "statusCode": "408",
         "success": false,
-        "message": "Gagal mengisi data penumpang: Waiting until element is enabled\nWait timed out after 15171ms",
-        "responseTime": "15496ms",
+        "message": "Gagal redirect ke halaman utama: Wait timed out after 10201ms",
+        "responseTime": "10201ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik pilihan destinasi favorit gagal: Waiting for element to be located By(xpath, //p[normalize-space()='Tangerang -> Los Angeles'])\nWait timed out after 10001ms",
+        "responseTime": "10001ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik Cari Penerbangan gagal: Waiting for element to be located By(xpath, //button[@class='bg-darkblue4 text-white p-2 rounded-lg'])\nWait timed out after 10024ms",
+        "responseTime": "10025ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Redirect gagal: Wait timed out after 10209ms",
+        "responseTime": "10209ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik tombol Pilih gagal: Waiting for element to be located By(xpath, //button[normalize-space()='Pilih'])\nWait timed out after 10005ms",
+        "responseTime": "10005ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal redirect ke halaman checkout: Wait timed out after 10201ms",
+        "responseTime": "10201ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal mengisi data penumpang: Waiting for element to be located By(xpath, //select[@placeholder='Pilih `Title`'])\nWait timed out after 10015ms",
+        "responseTime": "10016ms",
+        "reward": 1
+      }
+    ]
+  },
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "1614ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (empty)",
+        "responseTime": "2217ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1082ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal redirect ke halaman utama: Wait timed out after 10146ms",
+        "responseTime": "10146ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik pilihan destinasi favorit gagal: Waiting for element to be located By(xpath, //p[normalize-space()='Tangerang -> Los Angeles'])\nWait timed out after 10000ms",
+        "responseTime": "10001ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik Cari Penerbangan gagal: Waiting for element to be located By(xpath, //button[@class='bg-darkblue4 text-white p-2 rounded-lg'])\nWait timed out after 10030ms",
+        "responseTime": "10031ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Redirect gagal: Wait timed out after 10216ms",
+        "responseTime": "10216ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik tombol Pilih gagal: Waiting for element to be located By(xpath, //button[normalize-space()='Pilih'])\nWait timed out after 10205ms",
+        "responseTime": "10206ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal redirect ke halaman checkout: Wait timed out after 10205ms",
+        "responseTime": "10205ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal mengisi data penumpang: Waiting for element to be located By(xpath, //select[@placeholder='Pilih `Title`'])\nWait timed out after 10018ms",
+        "responseTime": "10018ms",
+        "reward": 1
+      }
+    ]
+  },
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "1586ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (valid)",
+        "responseTime": "2258ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1061ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman utama berhasil",
+        "responseTime": "6ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik pilihan destinasi favorit berhasil",
+        "responseTime": "68ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik Cari Penerbangan berhasil",
+        "responseTime": "70ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman pilih penerbangan berhasil",
+        "responseTime": "4ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol Pilih berhasil",
+        "responseTime": "282ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Diarahkan ke halaman checkout berhasil",
+        "responseTime": "6ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil mengisi data penumpang (valid)",
+        "responseTime": "1301ms",
+        "reward": 0
+      }
+    ]
+  },
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "1646ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (valid)",
+        "responseTime": "2267ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1061ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman utama berhasil",
+        "responseTime": "6ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik pilihan destinasi favorit berhasil",
+        "responseTime": "81ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik Cari Penerbangan berhasil",
+        "responseTime": "85ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman pilih penerbangan berhasil",
+        "responseTime": "7ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol Pilih berhasil",
+        "responseTime": "314ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Diarahkan ke halaman checkout berhasil",
+        "responseTime": "5ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil mengisi data penumpang (valid)",
+        "responseTime": "1289ms",
+        "reward": 0
+      }
+    ]
+  },
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "1580ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (valid)",
+        "responseTime": "2293ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1073ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman utama berhasil",
+        "responseTime": "5ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik pilihan destinasi favorit berhasil",
+        "responseTime": "68ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik Cari Penerbangan berhasil",
+        "responseTime": "70ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Redirect ke halaman pilih penerbangan berhasil",
+        "responseTime": "4ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol Pilih berhasil",
+        "responseTime": "293ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Diarahkan ke halaman checkout berhasil",
+        "responseTime": "6ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil mengisi data penumpang (valid)",
+        "responseTime": "1372ms",
+        "reward": 0
+      }
+    ]
+  },
+  {
+    "label": "SCENARIO: User mencoba login dengan data acak",
+    "transitions": [
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Membuka halaman login berhasil",
+        "responseTime": "1620ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Berhasil isi input login (invalid)",
+        "responseTime": "2340ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "200",
+        "success": true,
+        "message": "Klik tombol masuk berhasil",
+        "responseTime": "1064ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal redirect ke halaman utama: Wait timed out after 10169ms",
+        "responseTime": "10170ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik pilihan destinasi favorit gagal: Waiting for element to be located By(xpath, //p[normalize-space()='Tangerang -> Los Angeles'])\nWait timed out after 10056ms",
+        "responseTime": "10056ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik Cari Penerbangan gagal: Waiting for element to be located By(xpath, //button[@class='bg-darkblue4 text-white p-2 rounded-lg'])\nWait timed out after 10045ms",
+        "responseTime": "10045ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Redirect gagal: Wait timed out after 10166ms",
+        "responseTime": "10166ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Klik tombol Pilih gagal: Waiting for element to be located By(xpath, //button[normalize-space()='Pilih'])\nWait timed out after 10019ms",
+        "responseTime": "10020ms",
+        "reward": 1
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal redirect ke halaman checkout: Wait timed out after 10193ms",
+        "responseTime": "10193ms",
+        "reward": 0
+      },
+      {
+        "statusCode": "408",
+        "success": false,
+        "message": "Gagal mengisi data penumpang: Waiting for element to be located By(xpath, //select[@placeholder='Pilih `Title`'])\nWait timed out after 10211ms",
+        "responseTime": "10212ms",
         "reward": 1
       }
     ]

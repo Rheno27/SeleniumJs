@@ -14,7 +14,7 @@ function evaluasiISO25010() {
   let totalSteps = 0;
   let totalSuccess = 0;
   let totalStatus200 = 0;
-  let totalEfisien = 0;
+  let totalResponseTime = 0;
   let goalTercapaiCount = 0;
 
   data.forEach((scenario) => {
@@ -23,7 +23,7 @@ function evaluasiISO25010() {
       if (t.success === true) totalSuccess++;
       if (t.statusCode === "200") totalStatus200++;
       const responseTimeMs = parseInt(t.responseTime.replace("ms", ""));
-      if (responseTimeMs <= 2000) totalEfisien++;
+      totalResponseTime += responseTimeMs;
     });
 
     const goalTercapai = scenario.transitions.some((t) =>
@@ -33,17 +33,18 @@ function evaluasiISO25010() {
   });
 
   const totalScenarios = data.length;
-
+  const expectedResponseTime = 2000; // dalam ms
+  const averageResponseTime = totalSteps > 0 ? totalResponseTime / totalSteps : 0;
   const functionality = ((totalSuccess / totalSteps) * 100).toFixed(2);
   const reliability = ((totalStatus200 / totalSteps) * 100).toFixed(2);
-  const efficiency = ((totalEfisien / totalSteps) * 100).toFixed(2);
+  const efficiency = ((expectedResponseTime / averageResponseTime) * 100).toFixed(2);
   const usability = ((goalTercapaiCount / totalScenarios) * 100).toFixed(2);
 
   const hasil = {
     functionality: `${functionality}%`,
     reliability: `${reliability}%`,
     efficiency: `${efficiency}%`,
-    usability: `${usability}%`,
+    // usability: `${usability}%`,
   };
 
   console.log("\n📈 Evaluasi ISO 25010 (gabungan semua run):");
@@ -52,14 +53,16 @@ function evaluasiISO25010() {
   console.log("\n📌 Rumus Evaluasi:");
   console.log("Functionality = (Jumlah success === true / Total step) * 100");
   console.log("Reliability   = (Jumlah statusCode === '200' / Total step) * 100");
-  console.log("Efficiency    = (Jumlah responseTime <= 2000ms / Total step) * 100");
-  console.log("Usability     = (Jumlah skenario mencapai halaman tujuan / Total skenario) * 100");
+  console.log("Efficiency    = (Rata-rata Expected Response / Rata-rata Aktual Response) * 100");
+  // console.log("Usability     = (Jumlah skenario mencapai halaman tujuan / Total skenario) * 100");
 
   console.log("\n📊 Jumlah Variabel Penilaian:");
   console.log(`Total Step              : ${totalSteps}`);
   console.log(`Total Success           : ${totalSuccess}`);
   console.log(`Total Status 200        : ${totalStatus200}`);
-  console.log(`Total Response <=2000ms : ${totalEfisien}`);
+  console.log(`Total Response Time     : ${totalResponseTime} ms`);
+  console.log(`Rata-rata Response Time : ${averageResponseTime.toFixed(2)} ms`);
+  console.log(`Expected Response Time  : ${expectedResponseTime} ms`);
   console.log(`Total Skenario Goal OK  : ${goalTercapaiCount}`);
   console.log(`Total Skenario          : ${totalScenarios}`);
 }
